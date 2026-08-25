@@ -44,17 +44,12 @@ export MINIO_SECRET_KEY=your_secret_key
 
 ### 3. Run the notebook
 
-Open `parking.ipynb` in Jupyter and run all cells, or execute `parking.py` directly:
-
-```bash
-python parking.py
-```
+Open `parking.ipynb` in Jupyter and run all cells in order.
 
 ## Project Structure
 
 ```
 ├── parking.ipynb                          # Main analysis notebook
-├── parking.py                             # Notebook exported as a Python script
 ├── Annual_Parking_Study_Data_20251203.csv # Historical parking study data (2014–2019)
 └── README.md
 ```
@@ -65,3 +60,42 @@ python parking.py
 - **Low-demand areas**: Roosevelt, Columbia City, Commercial Core — persistently low occupancy suggesting opportunities to reduce prices or repurpose spaces.
 - Construction and event closures both suppress occupancy significantly (from ~0.77 to ~0.31).
 - Side of street has no meaningful effect on utilisation.
+
+---
+
+## Business Recommendations
+
+1. **Raise rates where occupancy is persistently high.** First Hill, Green Lake, Cherry Hill,
+   Westlake, Uptown and Fremont run consistently full — a signal that current pricing sits below
+   what demand supports, and that drivers are circling for spaces.
+2. **Reduce rates or repurpose kerb space where occupancy stays low.** Roosevelt, Columbia City
+   and the Commercial Core show persistent under-use; price cuts, or conversion to loading,
+   bike or transit space, are both worth testing.
+3. **Treat construction and event closures as a planned capacity loss, not noise.** Occupancy
+   falls from roughly 0.77 to 0.31 during closures — large enough that it should be modelled
+   explicitly in any utilisation target.
+4. **Stop differentiating by side of street.** It has no meaningful effect on utilisation, so it
+   is not worth carrying as a pricing or planning variable.
+
+---
+
+## Limitations
+
+- The annual study data covers **2014–2019**; the transaction data is a **single week** in
+  December 2025. The two sources are not directly comparable, and neither reflects current
+  post-pandemic commuting patterns.
+- The parking study is a **periodic manual survey**, not continuous sensor data, so occupancy is
+  a sampled snapshot rather than a true average.
+- One week of transaction data cannot separate seasonal effects from underlying demand — early
+  December is atypical.
+- The analysis is **descriptive**: it identifies where price and demand appear misaligned, but
+  does not estimate a demand elasticity, so the size of any rate change is not derived from the
+  data.
+
+---
+
+## Future Improvements
+
+- Estimate price elasticity per study area to size rate changes rather than only direction
+- Extend the transaction data to a full year to separate seasonality from demand
+- Join in transit and construction-permit data to control for supply-side shocks
