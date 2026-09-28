@@ -15,7 +15,7 @@ Seattle ranks among the top 10 most congested cities in the United States. This 
 | [Annual Parking Study Data](https://data.seattle.gov/Transportation/Annual-Parking-Study-Data/7jzm-ucez) | CSV | 2014–2019 |
 | [Paid Parking Transaction Data](https://data.seattle.gov/Transportation/Paid-Parking-Transaction-Data/gg89-k5p6/about_data) | JSON | 29 Nov – 5 Dec 2025 |
 
-Both datasets are publicly available from the City of Seattle Open Data Portal. The CSV file (`Annual_Parking_Study_Data_20251203.csv`) is included in this repository.
+Both datasets are publicly available from the City of Seattle Open Data Portal. Download the Annual Parking Study CSV from the portal link above and save it in the repo root as `Annual_Parking_Study_Data_20251203.csv` (it is not tracked in git; it is 33 MB).
 
 ## Tech Stack
 
@@ -50,7 +50,7 @@ Open `parking.ipynb` in Jupyter and run all cells in order.
 
 ```
 ├── parking.ipynb                          # Main analysis notebook
-├── Annual_Parking_Study_Data_20251203.csv # Historical parking study data (2014–2019)
+├── Annual_Parking_Study_Data_20251203.csv # Download from the portal (not tracked)
 └── README.md
 ```
 
